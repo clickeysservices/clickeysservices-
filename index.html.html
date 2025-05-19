@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="noindex, nofollow" name="robots"/>
+<title>Private Deals</title>
+<style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      color: white;
+      background: url('standard.gif') center/cover no-repeat fixed;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      backdrop-filter: blur(4px);
+      background-color: rgba(0, 0, 0, 0.4);
+      padding-top: 40px;
+    }
+    .card {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 15px;
+      margin: 10px;
+      width: 250px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.8);
+    }
+    .title {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+    }
+    .price {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .footer {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 1rem;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 15px;
+      border-radius: 15px;
+      max-width: 90%;
+    }
+    a {
+      color: #00bfff;
+      text-decoration: none;
+    }
+    #order-button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: #00bfff;
+      color: black;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 10px;
+      cursor: pointer;
+      z-index: 1000;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div style="position: fixed; top: 20px; right: 20px; z-index: 1000; display: flex; gap: 10px;">
+<a href="https://www.tiktok.com/@sscriptifyy?_t=ZP-8wTgWEAtAFj&amp;_r=1" target="_blank">
+<img alt="TikTok" src="tiktok_icon.png" style="width: 32px; height: 32px; border-radius: 50%;"/>
+</a>
+<a href="https://discord.gg/VzW9EqkMsC" target="_blank">
+<img alt="Discord" src="discord_icon.png" style="width: 32px; height: 32px; border-radius: 50%;"/>
+</a>
+<a href="https://www.youtube.com/@sscriptifyy" target="_blank"><img alt="YouTube" src="youtube_icon.png" style="width: 32px; height: 32px; border-radius: 50%;"/></a></div>
+<a href="https://www.tiktok.com/@sscriptifyy?_t=ZP-8wTgWEAtAFj&amp;_r=1" style="margin-right: 10px; font-size: 24px;" target="_blank">🎵</a>
+<a href="https://discord.gg/VzW9EqkMsC" style="font-size: 24px;" target="_blank">💬</a>
+
+<button id="order-button">Click here to get order ID</button>
+<a class="card" href="https://cash.app/$tb35472" target="_blank">
+<div class="title">🛒 Spotify Premium</div>
+<div class="price">$15</div>
+</a>
+<a class="card" href="https://cash.app/$tb35472" target="_blank">
+<div class="title">🛒 Discord Nitro (1 Year)</div>
+<div class="price">$22</div>
+</a>
+<a class="card" href="https://cash.app/$tb35472" target="_blank">
+<div class="title">🛒 Tha Bronx 3 File (Outdated)</div>
+<div class="price">$5</div>
+</a>
+<a class="card" href="https://cash.app/$tb35472" target="_blank">
+<div class="title">🛒 Tha Bronx 3 (Max Money)</div>
+<div class="price">$3</div>
+</a>
+<a class="card" href="https://cash.app/$tb35472" target="_blank">
+<div class="title">🛒 3 Months Nitro with 2 Boosts</div>
+<div class="price">$5</div>
+</a>
+<div class="footer">
+    🛒 👉 <a href="https://discord.gg/VzW9EqkMsC" target="_blank">Click here to join Discord</a> to buy!<br/>
+    🎟️ Make a ticket in Discord to purchase.<br/>🆔 You will need to send your order ID in your Discord ticket!<br/>
+    🚀 Get the best deals now!
+  </div>
+<audio hidden="" id="bg-audio">
+<source src="cafuné - tek it (muffled transition) [tiktok vers.].mp3" type="audio/mpeg"/>
+    Your browser does not support the audio element.
+  </audio>
+<button id="audio-toggle" style="position:fixed; bottom:20px; right:20px; padding:10px; border-radius:10px; background:#222; color:white; border:none; cursor:pointer; z-index:1000;">🔊 Sound On/Off</button>
+<script>
+    const audio = document.getElementById('bg-audio');
+    const toggle = document.getElementById('audio-toggle');
+    let hasPlayed = false;
+
+    function toggleAudio() {
+      if (audio.paused) {
+        audio.play().catch(() => {});
+      } else {
+        audio.pause();
+      }
+    }
+
+    toggle.addEventListener('click', toggleAudio);
+
+    window.addEventListener('click', () => {
+      if (!hasPlayed) {
+        audio.play().catch(() => {});
+        hasPlayed = true;
+      }
+    }, { once: true });
+
+    document.getElementById('order-button').addEventListener('click', () => {
+      const randomID = Math.floor(100 + Math.random() * 900);
+      alert("Order ID: " + randomID);
+    });
+  </script>
+</body>
+</html>
